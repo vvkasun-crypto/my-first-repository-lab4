@@ -1,0 +1,360 @@
+/* === ШРИФТИ І БАЗОВИЙ СТИЛЬ === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #6a5af9; 
+    --light-gray: #f4f3f8;
+    --text-color: #333;
+    --white-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+}
+
+
+body {
+    margin: 0;
+    line-height: 1.6;
+    
+    /* Фон з анімацією */
+    background: linear-gradient(-45deg, #a8e6cf, #dcedc1, #8ec5fc, #e0c3fc);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
+    
+    /* Центрування форми на фоні */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Додамо відступи про всяк випадок */
+}
+
+/* Анімація плавного руху фону */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    min-height: 500px;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+}
+
+
+
+.form-container-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    z-index: 5;
+}
+
+.form-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.form-container h1 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.form-container span {
+    font-size: 13px;
+    color: #555;
+    margin: 10px 0 15px 0;
+}
+
+.form-container .forgot-pass {
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin: 8px 0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    background-color: var(--light-gray);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 45px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 80ms ease-in;
+    margin-top: 10px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--white-color);
+    display: inline-block; 
+    text-align: center;
+}
+
+/* Позиціонування форм */
+.login-container {
+    z-index: 2;
+    opacity: 1;
+}
+
+.register-container {
+    z-index: 1;
+    opacity: 0;
+}
+
+.mobile-toggle {
+    display: none;
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 10;
+}
+
+.overlay {
+    position: relative;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: var(--primary-color);
+    background: linear-gradient(to right, #5c4aec, #7b68ee);
+    color: var(--white-color);
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* "Hello, Welcome!" */
+.overlay-left {
+    left: 50%;
+    transform: translateX(0);
+    z-index: 2;
+    opacity: 1;
+}
+
+/* "Welcome Back!" */
+.overlay-right {
+    left: 0;
+    transform: translateX(0);
+    z-index: 1;
+    opacity: 0;
+}
+
+
+#toggle-form:checked ~ .overlay-container {
+    transform: translateX(100%);
+}
+
+#toggle-form:checked ~ .overlay-container .overlay {
+    transform: translateX(50%);
+}
+
+#toggle-form:checked ~ .overlay-container .overlay-left {
+    opacity: 0;
+    z-index: 1;
+}
+
+#toggle-form:checked ~ .overlay-container .overlay-right {
+    opacity: 1;
+    z-index: 2;
+}
+
+#toggle-form:checked ~ .form-container-wrapper {
+    transform: translateX(-100%);
+}
+
+#toggle-form:checked ~ .form-container-wrapper .login-container {
+    opacity: 0;
+    z-index: 1;
+}
+
+#toggle-form:checked ~ .form-container-wrapper .register-container {
+    opacity: 1;
+    z-index: 5;
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 400px;
+        min-height: 600px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .overlay-container {
+        display: none;
+    }
+
+    .form-container-wrapper {
+        width: 100%;
+        transform: none !important;
+    }
+
+    .form-container {
+        transform: none !important;
+        padding: 30px 0;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    #toggle-form:checked ~ .form-container-wrapper .login-container {
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    #toggle-form:checked ~ .form-container-wrapper .register-container {
+        opacity: 1;
+        z-index: 2;
+    }
+}
+
+
+.back-home-btn {
+    position: fixed; 
+    top: 20px;
+    left: 20px;
+    z-index: 1000; 
+    
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+    
+    padding: 10px 15px;
+    background-color: #379683; 
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.back-home-btn i {
+    font-size: 12px;
+}
+
+.back-home-btn:hover {
+    background-color: #2e8b57; /* Темніший зелений при наведенні */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Адаптація для мобільних */
+@media (max-width: 768px) {
+    .back-home-btn {
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}

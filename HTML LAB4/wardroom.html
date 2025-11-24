@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Опитувальник</title>
+
+<link rel="icon" href="image/free-icon-forest-1927082.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<link rel="stylesheet" href="styles/wardroom.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Опитувальник</h1>
+    </header>
+
+    <section class="image-section">
+        <img src="https://euro-som.in.ua/wp-content/uploads/2025/05/rybolovlya-z-chovna-osoblyvosti-tehniky-ta-perevagy.png" alt="Риболовля">
+    </section>
+
+    <form class="survey-form">
+        <label>
+            Рівень досвіду:
+            <select name="experience">
+                <option>Початківець</option>
+                <option>Середній</option>
+                <option>Досвідчений</option>
+            </select>
+        </label>
+
+        <label>
+            Який вид риболовлі вам подобається найбільше?
+            <input type="radio" name="type" value="Фідерна риболовля"> Фідерна риболовля<br>
+            <input type="radio" name="type" value="Поплавчана риболовля"> Поплавчана риболовля<br>
+            <input type="radio" name="type" value="Риболовля на хижака"> Риболовля на хижака<br>
+            <input type="radio" name="type" value="Карпфішинг"> Карпфішинг
+        </label>
+
+        <label>
+            Як часто ви рибалите?
+            <input type="radio" name="frequency" value="Щотижня"> Щотижня<br>
+            <input type="radio" name="frequency" value="Щомісяця"> Щомісяця<br>
+            <input type="radio" name="frequency" value="Рідко"> Рідко
+        </label>
+
+        <label>
+            З ким ви зазвичай рибалите?
+            <input type="radio" name="company" value="Сам"> Сам<br>
+            <input type="radio" name="company" value="З друзями"> З друзями<br>
+            <input type="radio" name="company" value="З сім'єю"> З сім'єю
+        </label>
+
+        <label>
+            Що для вас головне в риболовлі?
+            <input type="radio" name="goal" value="Відпочинок"> Відпочинок<br>
+            <input type="radio" name="goal" value="Спорт/змагання"> Спорт/змагання<br>
+            <input type="radio" name="goal" value="Трофеї"> Трофеї
+        </label>
+
+        <label>
+            Улюблена риба:
+            <input type="text" name="fish">
+        </label>
+
+        <label>
+            Ваш коментар:
+            <textarea name="comment" rows="4" placeholder="Напишіть ваш коментар..."></textarea>
+        </label>
+
+        <div class="buttons">
+            <input type="submit" value="Надіслати">
+            <input type="reset" value="Очистити">
+            <a href="index.html" class="back-button">Назад</a>
+
+        </div>
+    </form>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
